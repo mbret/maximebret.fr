@@ -1,0 +1,11 @@
+{
+    "name": "",
+    "private": true,
+    "version": "0.0.0",
+    "description": "",
+    "keywords": ["",""],
+    "dependencies": {
+        "html-minifier": "~0.6.8"
+    },
+    "main": "app.js"
+}
