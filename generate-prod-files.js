@@ -1,15 +1,17 @@
 var fs = require('fs')
-var dirIndexHTML = 'public_html/dev';
-var dirCSS =  'public_html/dev/assets/css';
+var dirIndexHTML = 'public_html';
+var dirCSS =  'public_html/assets/css';
+var compressor = require('node-minify');
 
 /**
  * Run complete job
  */
 generateHTML( function(){
-    generateCSS( function(){
-        console.log('finished generate production files');
-    } );
+    console.log('finished generate HTML files');
 });
+generateCSS( function(){
+    console.log('finished generate CSS files');
+} );
 
 /**
  * - minify
@@ -23,6 +25,7 @@ function generateHTML( cb ){
 
         // Replace references
         var result = data.replace(/style.css/g, 'style.min.css');
+        var result = data.replace(/animation.css/g, 'animation.min.css');
 
         // Minify
         var minifiedHTML = require('html-minifier').minify( result, {
@@ -47,15 +50,29 @@ function generateHTML( cb ){
  * @param cb
  */
 function generateCSS( cb ){
-    fs.readFile( dirCSS + '/style.css', 'utf8', function (err,data) {
-        if (err) throw err;
+    _compressStyle( _compressAnimation( cb ) );
+}
 
-        var dataMinifier = data;
-
-        fs.writeFile( dirCSS + '/style.min.css', dataMinifier, 'utf8', function (err) {
+function _compressStyle( cb ){
+    new compressor.minify({
+        type: 'yui-css',
+        fileIn: dirCSS + '/style.css',
+        fileOut: dirCSS + '/style.min.css',
+        callback: function(err, min){
             if (err) throw err;
+            if( cb ) return cb();
+        }
+    });
+}
 
-            return cb();
-        });
+function _compressAnimation( cb ){
+    new compressor.minify({
+        type: 'yui-css',
+        fileIn: dirCSS + '/animation.css',
+        fileOut: dirCSS + '/animation.min.css',
+        callback: function(err, min){
+            if (err) throw err;
+            if( cb ) return cb();
+        }
     });
 }

@@ -5,7 +5,8 @@
     "description": "",
     "keywords": ["",""],
     "dependencies": {
-        "html-minifier": "~0.6.8"
+        "html-minifier": "~0.6.8",
+        "node-minify": "~0.10.5"
     },
     "main": "app.js"
 }
