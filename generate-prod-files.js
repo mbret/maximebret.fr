@@ -25,7 +25,7 @@ function generateHTML( cb ){
 
         // Replace references
         var result = data.replace(/style.css/g, 'style.min.css');
-        var result = data.replace(/animation.css/g, 'animation.min.css');
+        var result = result.replace(/animation.css/g, 'animation.min.css');
 
         // Minify
         var minifiedHTML = require('html-minifier').minify( result, {
