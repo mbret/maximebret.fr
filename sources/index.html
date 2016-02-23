@@ -21,6 +21,7 @@
 
     <!-- Theme of Design -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,12 +54,9 @@
                   <div id="slider-note" class="carousel slide" data-ride="carousel" data-interval="10000">
                     <div class="carousel-inner">
                       <div class="item active">
-                          Bienvenue sur ma page personnelle. J'aime les visites alors n'hésitez pas à y jeter un coup d'oeil :)
+                          Bienvenue sur ma page personnelle. N'hésitez pas à y jeter un coup d'oeil :)
                       </div>
-                      <div class="item">
-                        Je suis disponible pour une offre d'emploi.
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                      <div class="item">Je suis actuellement consultant chez <br><a href="http://www.versusmind.eu/" title="Versusmind" class="white-link"><i class="fa fa-external-link"></i> Versusmind</a>
                       </div>
                     </div>
                   </div>
@@ -73,9 +71,7 @@
                 <div class="portrait-img-area">
                   <img src="assets/images/avatar3.jpg" alt="avatar" class="avatar"/>
                   <div class="profile-links">
-                    <!--<a href="" class="facebook"  data-toggle="tooltip" data-placement="left" title="Facebook"><i class="fa fa-facebook"></i></a>-->
                     <a href="mailto:contact@maximebret.fr" class="facebook"  data-toggle="tooltip" data-placement="left" title="Me contacter"><i class="fa fa-envelope"></i></a>
-                    <!--<a href="" class="twitter"  data-toggle="tooltip" data-placement="right" title="Twitter"><i class="fa fa-twitter"></i></a>-->
                     <a href="http://maximebret.fr/assets/content/Maxime_Bret_CV.pdf" class="twitter"  data-toggle="tooltip" data-placement="right" title="Mon CV"><i class="fa fa-download"></i></a>
                   </div>
                 </div>
@@ -86,7 +82,7 @@
                 <!-- =========
                 Start Show Yor Name Section
                 ===================================-->
-                <h1 class="name">Maxime Bret <small>Développeur web / natif</small></h1>
+                <h1 class="name">Maxime Bret <small>Développeur full-stack</small></h1>
                 <img src="assets/images/arrow-down.png" alt="" class="img-arrow">
                 <a href="javascript:void(0)" class="btn btn-flat " id="open-content">À propos de moi</a>
                 <img src="assets/images/arrow-down.png" alt="" class="img-arrow">
@@ -113,9 +109,7 @@
                 <ul class="navigation-list clearfix list-unstyled">
                   <li class="active"><a href="#about" data-toggle="tab" data-menu="about"><i class="icon-user"></i> <span>À propos de moi</span></a></li>
                   <li><a href="#resume" data-toggle="tab" data-menu="resume"><i class="icon-newspaper"></i>  <span>Mon parcours</span></a></li>
-                  <!--<li><a href="#portfolio" data-toggle="tab" data-menu="portfolio"><i class="icon-folder-open"></i> <span>Portfolio</span></a></li>-->
-                  <!--<li><a href="#blog" data-toggle="tab" data-menu="blog"><i class="icon-pencil"></i> <span >Blog</span></a></li>-->
-                  <li><a href="#contact" data-toggle="tab" data-menu="contact"><i class="icon-mail"></i> <span>Contact</span></a></li>
+                  <li><a href="#contact" data-toggle="tab" data-menu="contact"><i class="icon-mail"></i> <span>Me contacter</span></a></li>
                 </ul>
               </nav>
               <!-- =========
@@ -145,19 +139,18 @@
                       <div class="col-md-9">
                         <div class="mini-desc">
                           <h2 class="title">Bonjour, je suis Maxime Bret !</h2>
-                          <p>
-                            Je suis un developpeur orienté web et back-end. J'étudie actuellement en Master Informatique principalement orienté développement et gestion de projets / entreprises à Nancy.
+                          <p class="text-justify">
+                              e suis un développeur full-stack avec une affection pour le javascript. Fraichement diplômé d'un Master informatique. J'ai rejoins l'entreprise Versusmind en début d'année 2015.
                           </p>
-                          <p>
-                            Mon père m'a transmis cette belle passion qu'est le monde informatique et j'ai ensuite choisis de m'intéresser plus particulièrement aux rudiments du développement.
-                            Ayant rapidement découvert le web, son potentiel évolutif et ses possibilités, je me suis naturellement tourné vers ses technologies.
-                            Mes compétences s'étendent cependant à d'autres langages de programmation plus ou moins courant et non web.
-                            <br/>Pour finir et peut être parce que l'être humain est d'une complexité sans pareil, je découvre, apprends et expérimente tout un tas de choses comme le réseau, le hardware et la technologie en général.
+                          <p class="text-justify">
+                              Mes premiers pas en informatique m'ont été possibles grâce à mon père qui m'a transmis sa passion pour le monde informatique.
+                              Depuis, j'en profite tous les jours grâce à mon travail ainsi qu'à mes projets personnel.
+                              Constamment à la rechercher de nouveaux challenges, je profite essentiellement de mes
+                              travaux personnels pour découvrir des nouvelles technologies et expérimenter des nouvelles techniques de conceptions / développements.
                           </p>
-                            <!--<p>-->
-                                <!--<i class="fa fa-thumbs-up"></i>-->
-                                <!--qsd-->
-                            <!--</p>-->
+                            <p class="text-justify">
+                                Sans vouloir étendre ma vie dans ce petit &lt;p&gt; je gravite également autour des technologies réseaux, le hardware ou encore la domotique.
+                            </p>
                         </div>
                       </div>
                     </div>
@@ -175,27 +168,27 @@
                         <div class="identity-area">
                           <div class="row">
                             <div class="col-sm-4"><label>Prénom et nom</label></div>
-                            <div class="col-sm-8"> Maxime Bret</div>
+                            <div class="col-sm-8">Maxime Bret</div>
                           </div>
                           <div class="row">
                             <div class="col-sm-4"><label>D. de naissance</label></div>
-                            <div class="col-sm-8"> 08 mars 1990</div>
+                            <div class="col-sm-8">08 mars 1990</div>
                           </div>
                           <div class="row">
                             <div class="col-sm-4"><label>Adresse</label></div>
-                            <div class="col-sm-8"> UFR Mathématique et Informatique - Artem (Nancy)</div>
+                            <div class="col-sm-8">Nancy - 54000</div>
                           </div>
                           <div class="row">
                             <div class="col-sm-4"><label>Tél</label></div>
-                            <div class="col-sm-8"> +33 6 71 93 90 36</div>
+                            <div class="col-sm-8">+33 6 71 93 90 36</div>
                           </div>
                           <div class="row">
                             <div class="col-sm-4"><label>Email</label></div>
-                            <div class="col-sm-8"> nom.prenom(at)gmail.com</div>
+                            <div class="col-sm-8">nom.prenom(at)gmail.com</div>
                           </div>
                           <div class="row">
                             <div class="col-sm-4"><label>Skype</label></div>
-                            <div class="col-sm-8"> <i class="fa fa-skype"></i> maxime.bret</div>
+                            <div class="col-sm-8"><i class="fa fa-skype"></i> maxime.bret</div>
                           </div>
 <!--                          <div class="row">
                             <div class="col-sm-4"><label>Website</label></div>
@@ -818,7 +811,7 @@
                       <div class="info-map">
                         <h3>Informations de contact</h3>
                         <ul class="list-unstyled list-info">
-                          <li><i class="fa fa-home"></i> UFR Mathématique et Informatique - Artem (Nancy)</li>
+                          <li><i class="fa fa-home"></i>Nancy - 54000</li>
                           <li><i class="fa fa-phone"></i> +33 6 71 93 90 36</li>
                           <li><i class="fa fa-envelope"></i> <a href="mailto:nom.prenom(at)gmail.com">nom.prenom(at)gmail.com</a></li>
                           <li><i class="fa fa-skype"></i> <a href="#">maxime.bret</a></li>
@@ -895,7 +888,7 @@
             Start Footer section
             ===================================-->
             <footer class="footer">
-              © 2014 Maxime Bret, tous droits reservés.
+              © 2016 Maxime Bret, tous droits reservés.
             </footer>
             <!-- =========
             End Footer section
@@ -927,7 +920,7 @@
     <script src='assets/js/pace.min.js'></script>
 
     <!-- JS maps for gmap3 JavaScript plugins) -->
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.js"></script>

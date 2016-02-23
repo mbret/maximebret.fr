@@ -144,7 +144,7 @@ function init_gmap() {
     $('#map').gmap3({
       action: 'init',
       marker: {
-        address: "Université Nancy 2 Pôle Lorrain de Gestion 13 Rue Michel Ney 54000 Nancy",
+        address: "54000 Nancy",
         options: {
           //icon: new google.maps.MarkerImage("./assets/images/marker.png")
         }
