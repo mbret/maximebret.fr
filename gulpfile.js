@@ -6,27 +6,29 @@ var inject = require('gulp-inject');
 var clean = require('gulp-clean');
 var merge = require('merge-stream');
 
+var dist = './.dist';
+
 gulp.task('clean', function () {
-    return gulp.src(['./tmp', './dist'], {read: false})
+    return gulp.src(['./tmp', dist], {read: false})
         .pipe(clean());
 });
 
 gulp.task('compress-js', ['clean'], function() {
     return gulp.src('./sources/assets/js/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/assets/js'));
+        .pipe(gulp.dest(dist + '/assets/js'));
 });
 
 gulp.task('compress-html', ['inject-prod'], function() {
-    return gulp.src('./dist/*.html')
+    return gulp.src(dist + '/*.html')
         .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest(dist))
 });
 
 gulp.task('compress-css', ['clean'], function() {
     return gulp.src('./sources/assets/css/*.css')
         .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe(gulp.dest('./dist/assets/css'))
+        .pipe(gulp.dest(dist + '/assets/css'))
 });
 
 gulp.task('copy', ['clean'], function(){
@@ -35,53 +37,53 @@ gulp.task('copy', ['clean'], function(){
             .src([
                 './sources/*.html'
             ])
-            .pipe(gulp.dest('./dist'))
+            .pipe(gulp.dest(dist))
         ,
         gulp
             .src([
                 './sources/assets/content/**/*'
             ])
-            .pipe(gulp.dest('./dist/assets/content'))
+            .pipe(gulp.dest(dist + '/assets/content'))
         ,
         gulp.src([
                 './sources/assets/font/**/*'
             ])
-            .pipe(gulp.dest('./dist/assets/font'))
+            .pipe(gulp.dest(dist + '/assets/font'))
         ,
         gulp.src([
                 './sources/assets/images/**/*'
             ])
-            .pipe(gulp.dest('./dist/assets/images'))
+            .pipe(gulp.dest(dist + '/assets/images'))
     );
 });
 
 gulp.task('scripts', ['compress-js'], function() {
     return gulp
         .src([
-            './dist/assets/js/*.js'
+            dist + '/assets/js/*.js'
         ])
         .pipe(concat('dist.min.js'))
-        .pipe(gulp.dest('./dist/assets/js'));
+        .pipe(gulp.dest(dist + '/assets/js'));
 });
 
 gulp.task('inject-prod', ['compress-css', 'scripts', 'copy'], function () {
-    var target = gulp.src('./dist/index.html');
+    var target = gulp.src(dist + '/index.html');
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     var sources = gulp.src([
         // js
-        './dist/assets/js/dist.min.js',
+        dist + '/assets/js/dist.min.js',
 
         // css
-        './dist/assets/font/fa/css/font-awesome.min.css',
-        './dist/assets/font/tello/css/fontello.css',
-        './dist/assets/css/magnific-popup.css',
-        './dist/assets/css/animation.css',
-        './dist/assets/css/style.css',
-        './dist/assets/css/custom.css'
+        dist + '/assets/font/fa/css/font-awesome.min.css',
+        dist + '/assets/font/tello/css/fontello.css',
+        dist + '/assets/css/magnific-popup.css',
+        dist + '/assets/css/animation.css',
+        dist + '/assets/css/style.css',
+        dist + '/assets/css/custom.css'
     ], {read: false});
 
     return target.pipe(inject(sources, {relative: true}))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest(dist));
 });
 
 gulp.task('inject-dev', function () {
