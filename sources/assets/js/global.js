@@ -8,6 +8,8 @@ $(document).ready(function() {
   init_nav_event();
   init_btn_love();
   init_modal_optional();
+
+    $('.my-age').html('(' + _calculateAge(new Date('1990-03-08')) + ' ans)');
 });
 
 function init_modal_optional() {
@@ -156,6 +158,12 @@ function init_gmap() {
       }
     });
   }, 2000);
+}
+
+function _calculateAge(birthday) { // birthday is a date
+    var ageDifMs = Date.now() - birthday.getTime();
+    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
 $(window).load(function() {
