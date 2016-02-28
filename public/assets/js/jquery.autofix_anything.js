@@ -45,6 +45,7 @@
     }
     
     fixAll = function(el, settings, curpos, pos){
+      console.log(el.parent());
       if (settings.customOffset == false) offset =  el.parent().offset().top
       if($(document).scrollTop() > offset && $(document).scrollTop() <= (el.parent().height() + (offset - $(window).height())))  {
           el.removeClass("bottom").addClass("fixed").css({
